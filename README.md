@@ -50,9 +50,3 @@ $ docker run --rm -p 5000:5000 blockchain
 $ docker run --rm -p 5001:5000 blockchain
 $ docker run --rm -p 5002:5000 blockchain
 ```
-
-
-## Resources:
-[Guide](https://hackernoon.com/learn-blockchains-by-building-one-117428612f46)
-| 
-[Repo](https://github.com/dvf/blockchain/tree/master)
