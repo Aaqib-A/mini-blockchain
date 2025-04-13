@@ -1,6 +1,6 @@
 
 from uuid import uuid4
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 
 from blockchain_4 import Blockchain
@@ -23,7 +23,18 @@ def mine():
 
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
-    return "We'll add a new transaction"
+    values = request.get_json()
+
+    # Check that the required fields are in the POST data
+    required = ['sender', 'recipient', 'amount']
+    if not all(k in values for k in required):
+        return 'Missing Values', 400
+
+    # Create a new transaction
+    index = blockchain.new_transaction(values['sender'], values['recipient'], values['amount'])
+
+    response = {'message': f'Transaction will be added to the block {index}'}
+    return jsonify(response), 200
 
 
 @app.route('/chain', methods=['GET'])
