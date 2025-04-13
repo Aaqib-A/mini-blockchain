@@ -1,0 +1,575 @@
+{
+	"info": {
+		"_postman_id": "8f566eb4-5605-4986-8169-387d7d3272fa",
+		"name": "Mini Blockchain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42461346"
+	},
+	"item": [
+		{
+			"name": "Mine Block",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/mine",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"mine"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/mine",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"mine"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.6"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 25 Mar 2025 18:58:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "We'll mine a new block"
+				},
+				{
+					"name": "Mine Block",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/mine",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"mine"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.6"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 25 Mar 2025 19:51:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "226"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"index\": 2,\n    \"message\": \"New Block Forged\",\n    \"previous_hash\": \"e7cea6c8fbe47e97daea48279ff0d5915a2716c3a07b7be156682cc4b1025f2b\",\n    \"proof\": 35293,\n    \"transactions\": [\n        {\n            \"amount\": 1,\n            \"recipient\": \"4f11a5e2662549bb88f0a340cdf9eb0c\",\n            \"sender\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "New Transactions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sender\": \"Aaqib\",\n    \"recipient\": \"Kartik\",\n    \"amount\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/transactions/new",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"transactions",
+						"new"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/transactions/new",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"transactions",
+								"new"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.6"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 25 Mar 2025 18:59:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "We'll add a new transaction"
+				},
+				{
+					"name": "New Transactions",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sender\": \"Aaqib\",\n    \"recipient\": \"Kartik\",\n    \"amount\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/transactions/new",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"transactions",
+								"new"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.6"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 25 Mar 2025 19:19:38 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Transaction will be added to the block 2\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Full Chain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/chain",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"chain"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/chain",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"chain"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.6"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 25 Mar 2025 19:00:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "112"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"chain\": [\n        {\n            \"index\": 1,\n            \"prevous_hash\": 1,\n            \"proof\": 100,\n            \"timestamp\": 1742929170.960327,\n            \"transactions\": []\n        }\n    ],\n    \"length\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nodes\": [\"127.0.0.1:5001\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/nodes/register",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"nodes",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [\"127.0.0.1:5000\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/nodes/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"nodes",
+								"register"
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.6"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 18:55:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"New nodes have been added\",\n    \"total_nodes\": [\n        \"127.0.0.1:5000\"\n    ]\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [\"127.0.0.1:5001\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/nodes/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"nodes",
+								"register"
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.6"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 18:55:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"New nodes have been added\",\n    \"total_nodes\": [\n        \"127.0.0.1:5000\",\n        \"127.0.0.1:5001\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Valid Chain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host2}}/nodes/resolve",
+					"host": [
+						"{{host2}}"
+					],
+					"path": [
+						"nodes",
+						"resolve"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host2}}/nodes/resolve",
+							"host": [
+								"{{host2}}"
+							],
+							"path": [
+								"nodes",
+								"resolve"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.6"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 18:57:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "139"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"chain\": [\n        {\n            \"index\": 1,\n            \"previous_hash\": 1,\n            \"proof\": 100,\n            \"timestamp\": 1743101630.746778,\n            \"transactions\": []\n        }\n    ],\n    \"message\": \"Our chain is authorative\"\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host2}}/nodes/resolve",
+							"host": [
+								"{{host2}}"
+							],
+							"path": [
+								"nodes",
+								"resolve"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.6"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 18:58:54 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "369"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Our chain was replaced\",\n    \"new_chain\": [\n        {\n            \"index\": 1,\n            \"previous_hash\": 1,\n            \"proof\": 100,\n            \"timestamp\": 1743101700.314021,\n            \"transactions\": []\n        },\n        {\n            \"index\": 2,\n            \"previous_hash\": \"17e837d2daf6889e2391a88001c2f2c9badf18569b1b53fd97f4bf05a4522211\",\n            \"proof\": 35293,\n            \"timestamp\": 1743101815.0080383,\n            \"transactions\": [\n                {\n                    \"amount\": 1,\n                    \"recipient\": \"efc5db3c75124792b27c061e56bf5cac\",\n                    \"sender\": 0\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "0.0.0.0:5000",
+			"type": "string"
+		},
+		{
+			"key": "host2",
+			"value": "0.0.0.0:5001",
+			"type": "string"
+		}
+	]
+}

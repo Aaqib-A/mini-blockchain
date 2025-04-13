@@ -3,7 +3,7 @@ from uuid import uuid4
 from flask import Flask, jsonify, request
 
 
-from blockchain_6 import Blockchain
+from blockchain import Blockchain
 
 # Instantiate our Node
 app = Flask(__name__)
