@@ -3,7 +3,7 @@ from uuid import uuid4
 from flask import Flask, jsonify, request
 
 
-from blockchain import Blockchain
+from blockchain_6 import Blockchain
 
 # Instantiate our Node
 app = Flask(__name__)
@@ -31,7 +31,7 @@ def mine():
         amount=1
     )
 
-    # Forge the new block by adding to 
+    # Forge the new block by adding to
     previous_hash = blockchain.hash(last_block)
     block = blockchain.new_block(proof, previous_hash)
 
@@ -44,6 +44,7 @@ def mine():
     }
 
     return jsonify(response), 200
+
 
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
@@ -68,6 +69,42 @@ def full_chain():
         'length': len(blockchain.chain)
     }
 
+    return jsonify(response), 200
+
+
+@app.route('/nodes/register', methods=['POST'])
+def register_node():
+    values = request.get_json()
+
+    nodes = values.get('nodes')
+    if nodes is None:
+        return "Error: Please supply a valid list of nodes", 400
+
+    for node in nodes:
+        blockchain.register_node(node)
+
+    response = {
+        'message': 'New nodes have been added',
+        'total_nodes': list(blockchain.nodes)
+    }
+
+    return jsonify(response), 201
+
+
+@app.route('/nodes/resolve', methods=['GET'])
+def consensus():
+    replaced = blockchain.resolve_conflict()
+
+    if replaced:
+        response = {
+            'message': 'Our chain was replaced',
+            'new_chain': blockchain.chain
+        }
+    else:
+        response = {
+            'message': 'Our chain is authorative',
+            'chain': blockchain.chain
+        }
     return jsonify(response), 200
 
 
